@@ -14,6 +14,7 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
   shortcuts = {
     'ctmd+shift+e': [this.__editorToggle, true],
     'ctmd+s': [this.__editorSave, true],
+    'ctmd+k': [this.__focusSearch, true],
     'esc': [this.__editorsEscape, true],
     'up, left': [this.__searchPrevious, false],
     'down, right': [this.__searchNext, false],
@@ -98,6 +99,14 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
 
   }
 
+  __focusSearch() {
+    if (this.props.container.window.isFocus()) {
+      this.props.container.window.toggleFocus();
+    }
+
+    this.props.container.search.focus();
+  }
+  
   __searchPrevious () {
 
     this.props.container.search.previous ();
