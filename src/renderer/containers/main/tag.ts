@@ -70,7 +70,7 @@ class Tag extends Container<TagState, MainCTX> {
 
     const obj = _.clone ( this.get ( tag ) );
 
-    if ( !obj ) return;
+    if ( !obj || _.isEmpty ( obj.tags ) ) return;
 
     obj.collapsed = force;
 
@@ -89,8 +89,14 @@ class Tag extends Container<TagState, MainCTX> {
 
         parent.tags[obj.name] = obj;
 
-        tags[TAGS].tags[parentPartRoot] = tags[parentPartRoot]; // It's import to update the TAGS tag too
-        tags[TAGS] = _.clone ( tags[TAGS] );
+        const isSpecial = ( tag === NOTEBOOKS ) || ( tag === TEMPLATES ) || tag.startsWith ( `${NOTEBOOKS}${Tags.SEPARATOR}` ) || tag.startsWith ( `${TEMPLATES}${Tags.SEPARATOR}` );
+
+        if ( !isSpecial ) { // It's important to update the TAGS tag too
+
+          tags[TAGS].tags[parentPartRoot] = tags[parentPartRoot];
+          tags[TAGS] = _.clone ( tags[TAGS] );
+
+        }
 
       }
 

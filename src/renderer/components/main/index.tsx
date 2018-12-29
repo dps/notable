@@ -36,8 +36,6 @@ class Main extends React.Component<any, undefined> {
 
   render () {
 
-    if ( this.props.loading ) return null;
-
     return (
       <>
         <ContextMenu />
