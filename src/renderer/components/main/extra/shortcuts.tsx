@@ -18,8 +18,11 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
     'ctmd+s': [this.__editorSave, true],
     'ctmd+k': [this.__showOmni, true],
     'esc': [this.__editorsEscape, true],
-    'up, left': [this.__searchPrevious, false],
-    'down, right': [this.__searchNext, false],
+    'up': [this.__searchPrevious, true],
+    'left': [this.__searchPrevious, false],
+    'down': [this.__searchNext, true],  
+    'right': [this.__searchNext, false],
+    'enter': [this.__enter, true],
   };
 
   /* SPECIAL */
@@ -109,6 +112,13 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
     } else {
       this.props.container.search.focus();
     }
+  }
+
+  __enter() {
+    if (this.props.container.window.isOmni()) {
+      return this.props.container.window.toggleOmni();
+    }
+    return null;
   }
 
   __searchPrevious () {

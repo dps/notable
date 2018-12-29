@@ -176,6 +176,11 @@
   overflow: hidden;
 }
 
+#omnibox-modal .sbutton {
+  background-color: blue;
+  color: white;
+}
+
 #middlebar .note-button .icon-badge {
   padding: 3px;
   background-color: rgba( 0, 0, 0, .1 );

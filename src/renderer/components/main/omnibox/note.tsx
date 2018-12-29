@@ -18,7 +18,7 @@ const Note = ({ note, style, title, hasAttachments, isActive, isSelected, isDele
 
   var cstyle = {...style, textAlign: "left"};
   return (
-    <div style={cstyle} className={`note-button ${!isMultiEditorEditing && isActive ? 'label' : 'button'} ${( isMultiEditorEditing ? isSelected : isActive ) ? 'active' : ''} small fluid compact circular`} data-checksum={note.checksum} data-filepath={note.filePath} data-deleted={isDeleted} data-favorited={isFavorited} onClick={onClick} tabIndex={0}> {/* tabIndex is need in order to have the notes focusable, we use that for navigating with arrow */}
+    <div style={cstyle} className={`note-button ${!isMultiEditorEditing && isActive ? 'label sbutton' : 'button'} ${( isMultiEditorEditing ? isSelected : isActive ) ? 'active' : ''} small fluid compact circular`} data-checksum={note.checksum} data-filepath={note.filePath} data-deleted={isDeleted} data-favorited={isFavorited} onClick={onClick} tabIndex={0}> {/* tabIndex is need in order to have the notes focusable, we use that for navigating with arrow */}
       <span style={{width: "100%", marginLeft: "10px", textOverflow: "ellipsis", overflow: "hidden", whiteSpace: "nowrap"}} className="title" dangerouslySetInnerHTML={{ __html: html }}></span>
     </div>
   );

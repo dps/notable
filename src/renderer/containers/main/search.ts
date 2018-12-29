@@ -128,7 +128,7 @@ class Search extends Container<SearchState, MainCTX> {
 
     await this.setNotes ( notes );
 
-    await this.ctx.note.update ( prevNoteIndex );
+    //await this.ctx.note.update ( prevNoteIndex );
 
     await this.ctx.multiEditor.update ();
 
