@@ -104,7 +104,11 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
   }
 
   __showOmni() {
+    if (this.props.container.window.isFocus()) {
       this.props.container.window.toggleOmni();
+    } else {
+      this.props.container.search.focus();
+    }
   }
 
   __searchPrevious () {
