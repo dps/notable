@@ -50,6 +50,10 @@ class Window extends Container<WindowState, MainCTX> {
 
   toggleOmni = ( omni: boolean = !this.state.omni ) => {
 
+    if (omni) {
+      this.ctx.search.setQuery("");
+    }
+
     return this.setState ({ omni });
 
   }
