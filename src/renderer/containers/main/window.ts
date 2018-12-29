@@ -11,6 +11,7 @@ class Window extends Container<WindowState, MainCTX> {
   /* STATE */
 
   state = {
+    omni: false,
     focus: false,
     fullscreen: remote.getCurrentWindow ().isFullScreen ()
   };
@@ -35,9 +36,21 @@ class Window extends Container<WindowState, MainCTX> {
 
   }
 
+  isOmni = (): boolean => {
+
+    return this.state.omni;
+
+  }
+
   toggleFocus = ( focus: boolean = !this.state.focus ) => {
 
     return this.setState ({ focus });
+
+  }
+
+  toggleOmni = ( omni: boolean = !this.state.omni ) => {
+
+    return this.setState ({ omni });
 
   }
 

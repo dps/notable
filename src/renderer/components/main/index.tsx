@@ -6,6 +6,7 @@ import {connect} from 'overstated';
 import MainContainer from '@renderer/containers/main';
 import Mainbar from './mainbar';
 import Middlebar from './middlebar';
+import Omnibox from './omnibox';
 import Sidebar from './sidebar';
 import ContextMenu from './extra/context_menu';
 import IPC from './extra/ipc';
@@ -47,6 +48,7 @@ class Main extends React.Component<any, undefined> {
           <Sidebar />
           <Middlebar />
           <Mainbar />
+          <Omnibox />
         </Wrapper>
       </>
     );

@@ -120,6 +120,7 @@ type TrashState = {};
 type TutorialState = {};
 
 type WindowState = {
+  omni: boolean,
   focus: boolean,
   fullscreen: boolean
 };

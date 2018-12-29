@@ -14,7 +14,7 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
   shortcuts = {
     'ctmd+shift+e': [this.__editorToggle, true],
     'ctmd+s': [this.__editorSave, true],
-    'ctmd+k': [this.__focusSearch, true],
+    'ctmd+k': [this.__showOmni, true],
     'esc': [this.__editorsEscape, true],
     'up, left': [this.__searchPrevious, false],
     'down, right': [this.__searchNext, false],
@@ -89,6 +89,8 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
 
   __editorsEscape () {
 
+    if ( this.props.container.window.isOmni()) return this.props.container.window.toggleOmni();
+
     if ( this.props.container.attachments.isEditing () || this.props.container.tags.isEditing () ) return null;
 
     if ( this.props.container.multiEditor.isEditing () ) return this.props.container.multiEditor.selectClear ();
@@ -99,14 +101,10 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
 
   }
 
-  __focusSearch() {
-    if (this.props.container.window.isFocus()) {
-      this.props.container.window.toggleFocus();
-    }
-
-    this.props.container.search.focus();
+  __showOmni() {
+      this.props.container.window.toggleOmni();
   }
-  
+
   __searchPrevious () {
 
     this.props.container.search.previous ();
