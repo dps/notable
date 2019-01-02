@@ -101,6 +101,7 @@ class Notes extends Container<NotesState, MainCTX> {
     };
 
     const change = async ( filePath, _refresh?: boolean ) => {
+      console.log("change " + filePath);
       if ( !isFilePathSupported ( filePath ) ) return;
       await rename ( filePath, filePath, _refresh );
     };

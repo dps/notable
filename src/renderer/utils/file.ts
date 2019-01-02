@@ -70,6 +70,20 @@ const File = {
 
   },
 
+  async readRaw ( filePath: string ): Promise<string | undefined> {
+
+    try {
+
+      return ( await pify ( fs.readFile )( filePath, {} ) ).toString ();
+
+    } catch ( e ) {
+
+      return;
+
+    }
+
+  },
+
   async copy ( srcPath: string, dstPath: string ) {
 
     try {

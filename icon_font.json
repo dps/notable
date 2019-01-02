@@ -6,6 +6,12 @@
   "icons": [
     "chevron-down",
     "close",
+    "cloud-alert",
+    "cloud-check",
+    "cloud-download",
+    "cloud-off-outline",
+    "cloud-sync",
+    "cloud-upload",
     "delete-forever",
     "delete-restore",
     "delete",

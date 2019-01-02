@@ -10,6 +10,7 @@ import EditorButton from './toolbar_button_editor';
 import FavoriteButton from './toolbar_button_favorite';
 import OpenButton from './toolbar_button_open';
 import PinButton from './toolbar_button_pin';
+import SyncButton from './toolbar_button_sync';
 import TagsButton from './toolbar_button_tags';
 import TrashButton from './toolbar_button_trash';
 import TrashPermanentlyButton from './toolbar_button_trash_permanently';
@@ -36,6 +37,7 @@ const Toolbar = ({ hasNote, isFocus, isFullscreen }) => (
         <TrashPermanentlyButton />
       </div>
       <div className="spacer"></div>
+      <SyncButton />
       <OpenButton />
     </div>
   </div>

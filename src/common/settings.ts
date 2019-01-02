@@ -20,6 +20,14 @@ const Settings = new Store ({
       by: 'title',
       type: 'ascending'
     },
+    sync: {
+      status: 'disabled',
+      service: 'gdrive',
+      credentials: 'gdrive/client_secret',
+      encrypt: false,
+      encryptionKey: 'add a key here',
+      remoteDir: 'notes',
+    },
     tutorial: false // Did we import the tutorial yet?
   }
 });

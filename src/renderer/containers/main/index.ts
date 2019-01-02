@@ -14,6 +14,7 @@ import Note from './note';
 import Notes from './notes';
 import Search from './search';
 import Sorting from './sorting';
+import Sync from './sync';
 import Tag from './tag';
 import Tags from './tags';
 import Trash from './trash';
@@ -154,6 +155,7 @@ export default compose ({
   notes: Notes,
   search: Search,
   sorting: Sorting,
+  sync: Sync,
   tag: Tag,
   tags: Tags,
   trash: Trash,

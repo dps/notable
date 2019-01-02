@@ -145,6 +145,7 @@ class App {
   load () {
 
     const cwd = Config.cwd;
+    console.log("cwd " + cwd);
 
     if ( cwd && fs.existsSync ( cwd ) ) {
 

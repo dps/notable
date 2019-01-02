@@ -38,6 +38,14 @@ const Config = {
     by: Settings.get ( 'sorting.by' ),
     type: Settings.get ( 'sorting.type' )
   },
+  sync: {
+    status: Settings.get('sync.status'),
+    service: Settings.get('sync.service'),
+    credentials: Settings.get('sync.credentials'),
+    encrypt: Settings.get('sync.encrypt'),
+    encryptionKey: Settings.get('sync.encryptionKey'),
+    remoteDir: Settings.get('sync.remoteDir'),
+  },
   flags: {
     TUTORIAL: true, // Write the tutorial notes upon first instantiation
     OPTIMISTIC_RENDERING: true // Assume writes are successful in order to render changes faster

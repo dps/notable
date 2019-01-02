@@ -24,6 +24,7 @@ type NoteMetadataObj = {
   deleted: boolean,
   favorited: boolean,
   pinned: boolean,
+  remoteId: string,
   stat: import ( 'fs' ).Stats,
   tags: string[],
   title: string
@@ -107,6 +108,22 @@ type SortingState = {
   by: import ( '@renderer/utils/sorting' ).SortingBys,
   type: import ( '@renderer/utils/sorting' ).SortingTypes
 };
+
+type SyncState = {
+  status: import ( '@renderer/utils/sync').SyncStatus,
+  service: string,
+  credentials: string,
+  encrypt: boolean,
+  encryptionKey: string,
+  remoteDir: string,
+  ops: SyncOp[],
+};
+
+type SyncOp = {
+  action: string,
+  filePath: string,
+  remoteId: string
+}
 
 type TagState = {
   tag: string

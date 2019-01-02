@@ -477,6 +477,22 @@ class Note extends Container<NoteState, MainCTX> {
 
   }
 
+  remoteId = ( note: NoteObj | undefined = this.state.note ): string => {
+
+    return note ? note.metadata.remoteId : "";
+
+  }
+
+  setRemoteId = async (note: NoteObj | undefined = this.state.note, remoteId : string) => {
+    if ( !note ) return;
+
+    const nextNote = _.cloneDeep ( note );
+
+    nextNote.metadata.remoteId = remoteId;
+
+    return this.write ( nextNote );
+  }
+
   isFavorited = ( note: NoteObj | undefined = this.state.note ): boolean => {
 
     return note ? !!note.metadata.favorited : false;
