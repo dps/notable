@@ -23,6 +23,10 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
     'down': [this.__searchNext, true],  
     'right': [this.__searchNext, false],
     'enter': [this.__enter, true],
+    'ctrl+page_down': [this.__searchNext, true],
+    'ctrl+page_up': [this.__searchPrevious, true],
+    'ctrl+alt+page_down': [this.__tagNext, true],
+    'ctrl+alt+page_up': [this.__tagPrevious, true]
   };
 
   /* SPECIAL */
@@ -130,6 +134,18 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
   __searchNext () {
 
     this.props.container.search.next ();
+
+  }
+
+  __tagNext () {
+
+    this.props.container.tag.next ();
+
+  }
+
+  __tagPrevious () {
+
+    this.props.container.tag.previous ();
 
   }
 
