@@ -724,7 +724,7 @@ class Note extends Container<NoteState, MainCTX> {
 
     if ( !note ) return;
 
-    if ( !Utils.scrollTo ( `.note-button[data-checksum="${note.checksum}"]`, undefined, '.layout-content > div' ) ) {
+    //if ( !Utils.scrollTo ( `.note-button[data-checksum="${note.checksum}"]`, undefined, '.layout-content > div' ) ) {
 
       const index = this.ctx.search.getNoteIndex ( note );
 
@@ -732,7 +732,7 @@ class Note extends Container<NoteState, MainCTX> {
 
       $.$window.trigger ( 'notes-scroll-to-item', index );
 
-    }
+    //}
 
   }
 
