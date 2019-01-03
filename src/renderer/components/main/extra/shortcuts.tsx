@@ -18,9 +18,9 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
     'ctmd+s': [this.__editorSave, true],
     'ctmd+k': [this.__showOmni, true],
     'esc': [this.__editorsEscape, true],
-    'up': [this.__searchPrevious, true],
+    'up': [this.__searchPrevious, false],
     'left': [this.__searchPrevious, false],
-    'down': [this.__searchNext, true],  
+    'down': [this.__searchNext, false],  
     'right': [this.__searchNext, false],
     'enter': [this.__enter, true],
     'ctrl+page_down': [this.__searchNext, true],
@@ -48,12 +48,13 @@ class Shortcuts extends Component<{ container: IMain }, undefined> {
   __keydown = event => {
 
     const isEditable = $.isEditable ( document.activeElement );
+    const isOmni = this.props.container.window.isOmni();
 
     for ( let shortcuts in this.shortcuts ) {
 
       const [handler, hasPriority] = this.shortcuts[shortcuts];
 
-      if ( !hasPriority && isEditable ) continue;
+      if ( !hasPriority && !isOmni && isEditable ) continue;
 
       const shortcutArr = shortcuts.split ( ',' );
 
